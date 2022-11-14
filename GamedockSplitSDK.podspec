@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
-  s.name             = 'GamedockSDK'
-  s.version          = '0.1.0'
+  s.name             = 'GamedockSplitSDK'
+  s.version          = '0.1.1'
   s.summary          = 'Gamedock ios splitted sdk'
  
   s.description      = <<-DESC
 iOS SDK of the Gamedock
                        DESC
  
-  s.homepage         = 'https://gitlab.azerdev.com/gamedock/sdk/gamedock-sdk-ios'
+  s.homepage         = 'https://gitlab.azerdev.com/gamedock/sdk/gamedock-sdk-ios-split'
   s.license          = {
     type: 'Gamedock License',
     text: <<-LICENSE
@@ -29,21 +29,44 @@ iOS SDK of the Gamedock
   }
   s.author           = 'Gamedock'
 
-  s.source           = { :git => 'https://github.com/azerion/gamedock-sdk-ios-split.git', :tag => '0.1.0' }
+  s.source           = { :git => 'https://github.com/azerion/gamedock-sdk-ios-split.git', :tag => '0.1.1' }
   s.ios.deployment_target   = '9.0'
   s.requires_arc     = true
   s.static_framework = true
   s.platform = :ios
 
 
-  
+  s.subspec "Core" do |spec|
+    spec.public_header_files = "Core/Gamedock.framework/Headers/*.h"
+  spec.source_files = "Core/Gamedock.framework/Headers/*.h"
+  spec.resources = "Core/Gamedock.framework/**/*.{png,storyboardc,bundle,json,momd,mom,omo}"
+  spec.resource_bundles = {
+    'GamedockSDK' => ['Core/Gamedock.framework/**/*.{png,storyboardc,bundle,json,momd,mom,omo}']
+  }
+  spec.vendored_frameworks = "Core/Gamedock.framework"
+  spec.platform = :ios
+
+  spec.xcconfig = { 
+    'IPHONEOS_DEPLOYMENT_TARGET' => "9.0" 
+  }
+  spec.requires_arc     = true
+
+  spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -Wl,-U,_UnitySendMessage' }
+  spec.user_target_xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -Wl,-U,_UnitySendMessage' }
+  spec.user_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+  spec.pod_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+  end
 
    s.subspec "User" do |spec|
     spec.public_header_files = "User/GamedockUserSDK.framework/Headers/*.h"
   spec.source_files = "User/GamedockUserSDK.framework/Headers/*.h"
   spec.vendored_frameworks = "User/GamedockUserSDK.framework"
   spec.platform = :ios
-
+  spec.dependency 'GamedockSplitSDK/Core'
 
   spec.xcconfig = { 
   'IPHONEOS_DEPLOYMENT_TARGET' => "9.0" 
