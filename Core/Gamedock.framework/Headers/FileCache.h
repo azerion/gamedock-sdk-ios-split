@@ -17,6 +17,5 @@
 
 +(void)clearDiskCache;
 
-//yoo2 +(void)preloadItemAndBundleImages;
 
 @end

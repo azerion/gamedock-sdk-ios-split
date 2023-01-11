@@ -1,0 +1,6 @@
+framework module GamedockLocalizationSDK {
+  umbrella header "GamedockLocalizationSDK.h"
+
+  export *
+  module * { export * }
+}

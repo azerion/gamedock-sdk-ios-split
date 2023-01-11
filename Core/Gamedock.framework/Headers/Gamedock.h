@@ -49,16 +49,14 @@
 //#import <Gamedock/UserDataTransaction.h>
 #import <Gamedock/EnvironmentDetector.h>
 #import "HookBridge.h"
-#import "GAI.h"
+//#import "GAI.h"
 #import <Gamedock/GamedockDelegate.h>
 
-#define GAMEDOCK_SDK_VERSION @"0.1.0"
-
+#define GAMEDOCK_SDK_VERSION @"5.2.2"
 
 @class Gamedock;
 @class InitializationOptions;
 @class UserDataTransaction;
-
 
 
 @interface Gamedock : NSObject {
@@ -77,6 +75,8 @@
 @property (nonatomic, retain, nullable) NSArray *whitelistedEvents;
 @property (nonatomic, assign) EnvironmentType buildType;
 @property (nonatomic, assign) BOOL isUnpublished;
+@property (nonatomic, assign) BOOL privacySDKInited;
+@property (nonatomic, retain) NSString *idfa;
 @property (nonatomic, retain, nullable) NSMutableDictionary *featuresVersionIds;
 @property (nonatomic, assign) BOOL disableAutoPushNotificationRegistration;
 @property (nonatomic, retain) NSURL *urlSchemeDeeplinkToHandleAfterInit;
@@ -171,5 +171,4 @@
 +(void)showDialog:(NSString*)title withMessage:(NSString*)message withOkButton:(NSString*)okButtonText handler:(void (^ __nullable)(UIAlertAction *action))handler;
 
 +(nonnull NSString*)getConsentStatus;
-
 @end

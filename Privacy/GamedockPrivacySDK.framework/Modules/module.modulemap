@@ -1,0 +1,6 @@
+framework module GamedockPrivacySDK {
+  umbrella header "GamedockPrivacySDK.h"
+
+  export *
+  module * { export * }
+}

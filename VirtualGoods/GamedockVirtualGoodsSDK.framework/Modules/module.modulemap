@@ -1,0 +1,6 @@
+framework module GamedockVirtualGoodsSDK {
+  umbrella header "GamedockVirtualGoodsSDK.h"
+
+  export *
+  module * { export * }
+}

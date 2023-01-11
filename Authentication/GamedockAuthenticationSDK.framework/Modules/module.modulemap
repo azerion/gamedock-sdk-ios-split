@@ -1,0 +1,6 @@
+framework module GamedockAuthenticationSDK {
+  umbrella header "GamedockAuthenticationSDK.h"
+
+  export *
+  module * { export * }
+}

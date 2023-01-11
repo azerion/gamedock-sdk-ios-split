@@ -1,0 +1,6 @@
+framework module GamedockFirebaseSDK {
+  umbrella header "GamedockFirebaseSDK.h"
+
+  export *
+  module * { export * }
+}

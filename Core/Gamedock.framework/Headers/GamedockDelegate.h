@@ -52,31 +52,12 @@
 // Config events
 -(void)configUpdated;
 -(void)configError:(nonnull NSString*)error;
-/* yoo
-// Missions events
--(void)missionConfigurationAvailable:(nonnull NSString*)containers withMissions:(nonnull NSString*)missions;
--(void)missionConfigurationNotAvailable;
--(void)missionConfigurationError:(nonnull NSString*)error;
--(void)missionDataUpdated:(nullable NSString*)reason withUpdatedMissionData:(nonnull UpdatedMissionData*)updatedMissionData withContainers:(nonnull NSString*)containers withMissions:(nonnull NSString*)missions;
-*/
-/* yoo
-// Package & promotion events
--(void)packagesAvailable:(nonnull NSString*)packagesJSON;
--(void)packagesNotAvailable;
--(void)promotionsAvailable:(nonnull NSString*)promotionsJSON;
--(void)promotionsNotAvailable;
--(void)onBoughtPromotion:(int)id amount:(int)amountPurchased maxPurchase:(int)maxPurchase;
-*/
+
 // Game data events
 -(void)gamedockGameDataAvailable:(nonnull NSString*)gameDataJSON;
 -(void)gamedockGameDataError:(nonnull NSString*)message;
 
-/* yoo
-// Player data events
--(void)playerDataUpdated:(nonnull NSString*)reason updatedData:(nonnull NSString*)updatedData wallet:(nonnull NSString*)wallet inventory:(nonnull NSString*)inventory;
--(void)playerDataEmptyGacha;
--(void)playerDataNewUniqueItem:(nonnull UniquePlayerItem*)newUniquePlayerItem bundleId:(int)bundleId gachaId:(int)gachaId gachaPosition:(int)gachaPosition tierId:(int)tierId reason:(nonnull NSString*)reason;
-*/
+
 // Azerion Connect
 -(void)azerionLoginSuccessful:(nonnull NSString*)data;
 -(void)azerionLoginFailed:(nonnull NSString*)data;
@@ -117,11 +98,11 @@
 -(void)userIdChangeCompleted;
 
 // Userdata syncing
--(void)userDataAvailable:(nonnull NSString*)wallet withInventory:(nonnull NSString*) intentory withContainers:(nonnull NSString*)containers withMissions:(nonnull NSString*)missions;
+-(void)userDataAvailable:(nonnull NSString*)wallet withInventory:(nonnull NSString*) intentory;
 -(void)userDataError:(nonnull NSString*)error withContext:(nonnull ErrorContext*)errorContext;
 -(void)userDataError:(nonnull NSString*)error;
 -(void)userDataMergeConflict:(nonnull NSString*)localData remoteData:(nonnull NSString*)remoteData;
--(void)userDataMergeSuccessful:(nonnull NSString*)wallet withInventory:(nonnull NSString*) intentory withContainers:(nonnull NSString*)containers withMissions:(nonnull NSString*)missions;
+-(void)userDataMergeSuccessful:(nonnull NSString*)wallet withInventory:(nonnull NSString*) intentory;
 -(void)userDataMergeFailed:(nonnull NSString*)mergeData mergeType:(nonnull NSString*)mergeType;
 -(void)userDataHandleMerge:(nonnull NSString*)mergeType; // Called when a merge conflict option button was pressed
 -(void)userDataSyncError;
@@ -138,8 +119,7 @@
 -(void)assetBundlesAvailable:(nonnull NSString*)assetBundlesJSON;
 -(void)assetBundlesNotAvailable;
 
-// Firebase
--(void)firebaseRemoteConfigUpdated;
+
 
 // Game version update available
 -(void)gameVersionStatus:(nonnull NSString*)status;
@@ -148,11 +128,6 @@
 -(void)attPermissionStatus:(int)status;
 -(void)privValueChangeForced:(int)priv;
 
-//Localization
-///Callback if localization is available (contains also the locale in case the default locale is returned)
--(void)onLocalizationAvailable:(NSString*)locale isDefaultLocale:(BOOL)isDefaultLocale;
--(void)onLocalizationNotAvailable;
--(void)onLocalizationError:(NSString*)error;
 
 -(void)onAdTrigger;
 @end

@@ -1,6 +1,0 @@
-framework module GamedockUserSDK {
-  umbrella header "GamedockUserSDK.h"
-
-  export *
-  module * { export * }
-}

@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
-// yoo #import "GachaContent.h"
 #import "GamedockWebViewHandler.h"
 
 @interface GamedockWebViewController : UIViewController<WKNavigationDelegate, WKScriptMessageHandler, UIScrollViewDelegate>
@@ -21,7 +20,6 @@
 -(void)injectPackagePromotionData:(NSString*)packageName;
 -(void)injectIAPData:(NSMutableArray*)iapsData;
 -(void)injectBuyBundleData:(BOOL)success bundleId:(int)bundleId;
-// yoo-(void)injectOpenGachaData:(GachaContent*)item;
 -(void)injectUserDataError:(NSString*)errorJson;
 -(void)injectUpdatedPlayerData;
 

@@ -1,0 +1,6 @@
+framework module GamedockPromotionSDK {
+  umbrella header "GamedockPromotionSDK.h"
+
+  export *
+  module * { export * }
+}

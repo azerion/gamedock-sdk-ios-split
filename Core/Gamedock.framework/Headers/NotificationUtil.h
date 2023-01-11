@@ -13,5 +13,5 @@
 +(void)send:(NSString *)name;
 +(void)send:(NSString *)name message:(NSString*)message;
 +(void)send:(NSString *)name data:(id)data;
-
++(void)sendWithName:(NSString *)name data:(id)data;
 @end

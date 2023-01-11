@@ -32,10 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(void)clearDiskCache;
 
-/**
- * Automatically preloads all images for all items and bundles
- */
-//yoo2 +(void)preloadItemAndBundleImages;
+
 
 @end
 

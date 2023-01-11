@@ -53,17 +53,8 @@ static NSString* const FEATURE_NAME_SOCIAL = @"socialLogin";
 -(void)resetProfile;
 
 // --- Login ---
-
--(void)loginWithExternalUserId:(NSString*)externalUserId externalProviderId:(NSString*)externalProviderId externalToken:(NSString*)externalToken socialValidationData:(NSDictionary*)socialValidationData;
 -(BOOL)isLoggedIn;
--(void)logout:(BOOL)global;
--(void)userPlayAsGuest;
 -(void)resetData;
--(void)showOnAuthorizedDialog:(NSString*)title message:(NSString*)message loginButtonText:(NSString*)loginButtonText guestButtonText:(NSString*)guestButtonText;
--(void)showOnMergeDialog:(NSString*)title message:(NSString*)message localButtonText:(NSString*)localButtonText remoteButtonText:(NSString*)remoteButtonText mergeButtonText:(NSString*)mergeButtonText;
-// yoo2 -(void)showOnSyncDialog:(NSString*)title message:(NSString*)message mergeButtonText:(NSString*)mergeButtonText;
-// yoo2 -(void)showUserDataMergeFailedDialog:(NSString*)title withMessage:(NSString*)message retryButtonText:(NSString*)retryButton mergeData:(NSString*)mergeData mergeType:(NSString*)mergeType;
-
 // --- Userdata ---
 
 -(void)setPrivateGameState:(NSString*)privateData sendUpdate:(Boolean)sendUpdate;
@@ -101,6 +92,8 @@ static NSString* const FEATURE_NAME_SOCIAL = @"socialLogin";
 
 -(void)saveDeviceVersions;
 -(void)saveMetadata;
+
+-(void)resetDeviceVersions;
 
 @end
 
